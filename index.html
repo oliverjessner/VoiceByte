@@ -1,170 +1,185 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VoiceByte TTS | Browser-Based Text to Speech</title>
-  <meta name="description" content="VoiceByte is a fast browser-based text-to-speech app powered by the native Web Speech API. Speak text locally, manage favorites, and adjust voice, rate, pitch, and volume.">
-  <meta name="keywords" content="text to speech, browser text to speech, web speech api, speech synthesis, client-side tts, VoiceByte">
-  <meta name="author" content="Oliver Jessner">
-  <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#1677ff">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="VoiceByte TTS | Browser-Based Text to Speech">
-  <meta property="og:description" content="A lightweight browser-based text-to-speech app using the native Web Speech API with favorites, session history, and local settings.">
-  <meta property="og:image" content="assets/images/logo.png">
-  <meta property="og:site_name" content="VoiceByte">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="VoiceByte TTS | Browser-Based Text to Speech">
-  <meta name="twitter:description" content="Native browser text-to-speech with voices, favorites, keyboard shortcuts, and no backend required.">
-  <meta name="twitter:image" content="assets/images/logo.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/icon.png">
-  <link rel="apple-touch-icon" href="assets/images/icon.png">
-  <link rel="stylesheet" href="styles.css">
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "VoiceByte TTS",
-      "applicationCategory": "UtilitiesApplication",
-      "operatingSystem": "Any",
-      "browserRequirements": "Requires a modern browser with Web Speech API support",
-      "description": "VoiceByte is a browser-based text-to-speech app using the native Web Speech API for fully client-side speech synthesis.",
-      "image": "assets/images/logo.png",
-      "logo": "assets/images/logo.png",
-      "url": "./",
-      "author": {
-        "@type": "Person",
-        "name": "Oliver Jessner",
-        "url": "https://oliverjessner.at"
-      },
-      "publisher": {
-        "@type": "Person",
-        "name": "Oliver Jessner",
-        "url": "https://oliverjessner.at"
-      },
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "EUR"
-      }
-    }
-  </script>
-</head>
-<body>
-  <main class="app-shell">
-    <div class="layout-grid">
-      <section class="app-card" aria-labelledby="app-title">
-        <header class="app-header">
-          <div class="brand-lockup">
-            <img class="brand-logo" src="assets/images/logo.png" alt="VoiceByte logo">
-            <div>
-            <p class="eyebrow">Client-Side Text to Speech</p>
-            <h1 id="app-title">VoiceByte</h1>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>VoiceByte TTS | Browser-Based Text to Speech</title>
+        <meta
+            name="description"
+            content="VoiceByte is a fast browser-based text-to-speech app powered by the native Web Speech API. Speak text locally, manage favorites, and adjust voice, rate, pitch, and volume."
+        />
+        <meta
+            name="keywords"
+            content="text to speech, browser text to speech, web speech api, speech synthesis, client-side tts, VoiceByte"
+        />
+        <meta name="author" content="Oliver Jessner" />
+        <meta name="robots" content="index, follow" />
+        <meta name="theme-color" content="#1677ff" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="VoiceByte TTS | Browser-Based Text to Speech" />
+        <meta
+            property="og:description"
+            content="A lightweight browser-based text-to-speech app using the native Web Speech API with favorites, session history, and local settings."
+        />
+        <meta property="og:image" content="assets/images/logo.png" />
+        <meta property="og:site_name" content="VoiceByte" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="VoiceByte TTS | Browser-Based Text to Speech" />
+        <meta
+            name="twitter:description"
+            content="Native browser text-to-speech with voices, favorites, keyboard shortcuts, and no backend required."
+        />
+        <meta name="twitter:image" content="assets/images/logo.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/images/icon.png" />
+        <link rel="apple-touch-icon" href="assets/images/icon.png" />
+        <link rel="stylesheet" href="styles.css" />
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "WebApplication",
+                "name": "VoiceByte TTS",
+                "applicationCategory": "UtilitiesApplication",
+                "operatingSystem": "Any",
+                "browserRequirements": "Requires a modern browser with Web Speech API support",
+                "description": "VoiceByte is a browser-based text-to-speech app using the native Web Speech API for fully client-side speech synthesis.",
+                "image": "assets/images/logo.png",
+                "logo": "assets/images/logo.png",
+                "url": "./",
+                "author": {
+                    "@type": "Person",
+                    "name": "Oliver Jessner",
+                    "url": "https://oliverjessner.at"
+                },
+                "publisher": {
+                    "@type": "Person",
+                    "name": "Oliver Jessner",
+                    "url": "https://oliverjessner.at"
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "EUR"
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <main class="app-shell">
+            <div class="layout-grid">
+                <section class="app-card" aria-labelledby="app-title">
+                    <header class="app-header">
+                        <div class="brand-lockup">
+                            <img class="brand-logo" src="assets/images/logo.png" alt="VoiceByte logo" />
+                            <div>
+                                <p class="eyebrow">Client-Side Text to Speech</p>
+                                <h1 id="app-title">VoiceByte</h1>
+                            </div>
+                        </div>
+                        <div class="status-wrap" aria-live="polite" aria-atomic="true">
+                            <span class="status-label">Status</span>
+                            <span id="status" class="status-chip status-ready">Ready</span>
+                        </div>
+                    </header>
+
+                    <section class="favorites-panel" aria-labelledby="favorites-title">
+                        <div class="favorites-heading">
+                            <div>
+                                <h2 id="favorites-title">Favorites</h2>
+                            </div>
+                        </div>
+                        <p id="favorites-shortcut-help" class="help-text"></p>
+                        <div id="favorites-list" class="history-list" role="list"></div>
+                    </section>
+
+                    <div id="message" class="message" role="alert" hidden></div>
+
+                    <form id="tts-form" novalidate>
+                        <div class="field">
+                            <label for="text-input">Text</label>
+                            <textarea
+                                id="text-input"
+                                name="text"
+                                rows="8"
+                                placeholder="Type or paste text to speak..."
+                                spellcheck="true"
+                            ></textarea>
+                        </div>
+
+                        <div class="field">
+                            <label for="voice-select">Voice</label>
+                            <select id="voice-select" name="voice" aria-describedby="voice-help"></select>
+                            <p id="voice-help" class="help-text">
+                                Available voices come from your browser and operating system.
+                            </p>
+                        </div>
+
+                        <div class="controls-grid">
+                            <div class="field range-field">
+                                <div class="range-label-row">
+                                    <label for="rate">Rate</label>
+                                    <output id="rate-value" for="rate">1.0</output>
+                                </div>
+                                <input id="rate" name="rate" type="range" min="0.5" max="2" step="0.1" value="1" />
+                            </div>
+
+                            <div class="field range-field">
+                                <div class="range-label-row">
+                                    <label for="pitch">Pitch</label>
+                                    <output id="pitch-value" for="pitch">1.0</output>
+                                </div>
+                                <input id="pitch" name="pitch" type="range" min="0" max="2" step="0.1" value="1" />
+                            </div>
+
+                            <div class="field range-field">
+                                <div class="range-label-row">
+                                    <label for="volume">Volume</label>
+                                    <output id="volume-value" for="volume">1.0</output>
+                                </div>
+                                <input id="volume" name="volume" type="range" min="0" max="1" step="0.1" value="1" />
+                            </div>
+                        </div>
+
+                        <div class="button-row">
+                            <button id="speak-btn" type="button">Speak</button>
+                            <button id="pause-btn" type="button">Pause</button>
+                            <button id="resume-btn" type="button">Resume</button>
+                            <button id="stop-btn" type="button">Stop</button>
+                            <button id="clear-btn" type="button" class="button-muted">Clear</button>
+                        </div>
+                    </form>
+                </section>
+
+                <aside class="sidebar-card" aria-labelledby="history-title">
+                    <div class="sidebar-heading">
+                        <div>
+                            <p class="sidebar-eyebrow">Right Panel</p>
+                            <h2 id="history-title">History</h2>
+                        </div>
+                    </div>
+
+                    <section class="sidebar-section" aria-labelledby="session-history-title">
+                        <div class="sidebar-subheading">
+                            <div>
+                                <h3 id="session-history-title">Session</h3>
+                            </div>
+                            <span class="sidebar-meta">temporary</span>
+                        </div>
+                        <p class="help-text">
+                            Items appear here after speaking. Use the heart to save one as a favorite.
+                        </p>
+                        <div id="history-list" class="history-list" role="list"></div>
+                    </section>
+                </aside>
             </div>
-          </div>
-          <div class="status-wrap" aria-live="polite" aria-atomic="true">
-            <span class="status-label">Status</span>
-            <span id="status" class="status-chip status-ready">Ready</span>
-          </div>
-        </header>
 
-        <section class="favorites-panel" aria-labelledby="favorites-title">
-          <div class="favorites-heading">
-            <div>
-              <h2 id="favorites-title">Favorites</h2>
-            </div>
-            <span id="favorites-shortcut-meta" class="sidebar-meta"></span>
-          </div>
-          <p id="favorites-shortcut-help" class="help-text"></p>
-          <div id="favorites-list" class="history-list" role="list"></div>
-        </section>
+            <footer class="app-footer">
+                <p>
+                    Copyright Oliver Jessner
+                    <a href="https://oliverjessner.at" target="_blank" rel="noopener noreferrer">oliverjessner.at</a>
+                </p>
+            </footer>
+        </main>
 
-        <div id="message" class="message" role="alert" hidden></div>
-
-        <form id="tts-form" novalidate>
-          <div class="field">
-            <label for="text-input">Text</label>
-            <textarea
-              id="text-input"
-              name="text"
-              rows="8"
-              placeholder="Type or paste text to speak..."
-              spellcheck="true"
-            ></textarea>
-          </div>
-
-          <div class="field">
-            <label for="voice-select">Voice</label>
-            <select id="voice-select" name="voice" aria-describedby="voice-help"></select>
-            <p id="voice-help" class="help-text">Available voices come from your browser and operating system.</p>
-          </div>
-
-          <div class="controls-grid">
-            <div class="field range-field">
-              <div class="range-label-row">
-                <label for="rate">Rate</label>
-                <output id="rate-value" for="rate">1.0</output>
-              </div>
-              <input id="rate" name="rate" type="range" min="0.5" max="2" step="0.1" value="1">
-            </div>
-
-            <div class="field range-field">
-              <div class="range-label-row">
-                <label for="pitch">Pitch</label>
-                <output id="pitch-value" for="pitch">1.0</output>
-              </div>
-              <input id="pitch" name="pitch" type="range" min="0" max="2" step="0.1" value="1">
-            </div>
-
-            <div class="field range-field">
-              <div class="range-label-row">
-                <label for="volume">Volume</label>
-                <output id="volume-value" for="volume">1.0</output>
-              </div>
-              <input id="volume" name="volume" type="range" min="0" max="1" step="0.1" value="1">
-            </div>
-          </div>
-
-          <div class="button-row">
-            <button id="speak-btn" type="button">Speak</button>
-            <button id="pause-btn" type="button">Pause</button>
-            <button id="resume-btn" type="button">Resume</button>
-            <button id="stop-btn" type="button">Stop</button>
-            <button id="clear-btn" type="button" class="button-muted">Clear</button>
-          </div>
-        </form>
-      </section>
-
-      <aside class="sidebar-card" aria-labelledby="history-title">
-        <div class="sidebar-heading">
-          <div>
-            <p class="sidebar-eyebrow">Right Panel</p>
-            <h2 id="history-title">History</h2>
-          </div>
-        </div>
-
-        <section class="sidebar-section" aria-labelledby="session-history-title">
-          <div class="sidebar-subheading">
-            <div>
-              <h3 id="session-history-title">Session</h3>
-            </div>
-            <span class="sidebar-meta">temporary</span>
-          </div>
-          <p class="help-text">Items appear here after speaking. Use the heart to save one as a favorite.</p>
-          <div id="history-list" class="history-list" role="list"></div>
-        </section>
-      </aside>
-    </div>
-
-    <footer class="app-footer">
-      <p>
-        Copyright Oliver Jessner
-        <a href="https://oliverjessner.at" target="_blank" rel="noopener noreferrer">oliverjessner.at</a>
-      </p>
-    </footer>
-  </main>
-
-  <script src="app.js"></script>
-</body>
+        <script src="app.js"></script>
+    </body>
 </html>

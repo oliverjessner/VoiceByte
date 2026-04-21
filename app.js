@@ -21,7 +21,6 @@ const elements = {
     message: document.getElementById('message'),
     historyList: document.getElementById('history-list'),
     favoritesList: document.getElementById('favorites-list'),
-    favoritesShortcutMeta: document.getElementById('favorites-shortcut-meta'),
     favoritesShortcutHelp: document.getElementById('favorites-shortcut-help'),
 };
 
@@ -662,7 +661,6 @@ function shortcutKeyToIndex(key) {
 }
 
 function renderShortcutHints() {
-    elements.favoritesShortcutMeta.textContent = `${shortcutModifierLabel} + 1-9, 0`;
     elements.favoritesShortcutHelp.textContent = `Up to 10 favorites are stored locally. Press ${shortcutModifierLabel} plus a number key to load and speak one.`;
 }
 
