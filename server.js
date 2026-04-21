@@ -5,6 +5,7 @@ const path = require("path");
 const HOST = "127.0.0.1";
 const PORT = Number(process.env.PORT) || 3000;
 const ROOT_DIR = __dirname;
+const PACKAGE_JSON_PATH = path.join(ROOT_DIR, "package.json");
 
 const MIME_TYPES = {
   ".html": "text/html; charset=utf-8",
@@ -22,6 +23,12 @@ const MIME_TYPES = {
 const server = http.createServer((request, response) => {
   const requestUrl = new URL(request.url, `http://${request.headers.host || `${HOST}:${PORT}`}`);
   const pathname = decodeURIComponent(requestUrl.pathname);
+
+  if (pathname === "/api/version") {
+    handleVersionRequest(response);
+    return;
+  }
+
   const requestedPath = pathname === "/" ? "/index.html" : pathname;
   const safePath = path.normalize(requestedPath).replace(/^(\.\.[/\\])+/, "");
   const filePath = path.join(ROOT_DIR, safePath);
@@ -58,4 +65,23 @@ server.listen(PORT, HOST, () => {
 function sendError(response, statusCode, message) {
   response.writeHead(statusCode, { "Content-Type": "text/plain; charset=utf-8" });
   response.end(message);
+}
+
+function handleVersionRequest(response) {
+  fs.readFile(PACKAGE_JSON_PATH, "utf8", (error, content) => {
+    if (error) {
+      sendError(response, 500, "Unable to read package.json");
+      return;
+    }
+
+    try {
+      const packageJson = JSON.parse(content);
+      const version = packageJson.version || "unknown";
+
+      response.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
+      response.end(JSON.stringify({ version }));
+    } catch {
+      sendError(response, 500, "Invalid package.json");
+    }
+  });
 }
