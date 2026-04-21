@@ -1,0 +1,9 @@
+{
+  "name": "voicebyte-tts",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tiny browser-based text-to-speech app with a minimal static file server.",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
