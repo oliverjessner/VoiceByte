@@ -12,7 +12,6 @@
     --surface: #f6f8fb;
     --shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
     --radius: 20px;
-    --app-height: 883px;
 }
 
 * {
@@ -502,11 +501,6 @@ button:disabled {
 
 #stop-btn:hover:not(:disabled) {
     background: var(--danger-hover);
-}
-
-.sidebar-card,
-.app-card {
-    max-height: var(--app-height);
 }
 
 @media (max-width: 720px) {
