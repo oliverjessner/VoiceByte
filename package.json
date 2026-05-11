@@ -1,6 +1,6 @@
 {
     "name": "voicebyte-tts",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "private": true,
     "description": "Tiny browser-based text-to-speech app with a minimal static file server.",
     "scripts": {
